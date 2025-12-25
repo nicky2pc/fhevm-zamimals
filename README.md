@@ -1,7 +1,9 @@
-# FHEVM Hardhat Template
+# Zamimals – FHEVM Hardhat Template
 
-A Hardhat-based template for developing Fully Homomorphic Encryption (FHE) enabled Solidity smart contracts using the
-FHEVM protocol by Zama.
+A Hardhat-based template for developing **Fully Homomorphic Encryption (FHE)** enabled Solidity smart contracts for the **Zamimals on-chain game**, using the **FHEVM protocol by Zama**.
+
+This template provides the smart contract foundation for minting **confidential NFTs** with encrypted game scores stored on-chain and decrypted only by the owner.
+
 
 ## Quick Start
 
