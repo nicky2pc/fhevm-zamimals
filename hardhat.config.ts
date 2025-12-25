@@ -23,9 +23,7 @@ const config: HardhatUserConfig = {
     deployer: 0,
   },
   etherscan: {
-    apiKey: {
-      sepolia: vars.get("ETHERSCAN_API_KEY", ""),
-    },
+      apiKey: vars.get("ETHERSCAN_API_KEY", ""),
   },
   gasReporter: {
     currency: "USD",
@@ -65,7 +63,7 @@ const config: HardhatUserConfig = {
     tests: "./test",
   },
   solidity: {
-    version: "0.8.27",
+    version: "0.8.24",
     settings: {
       metadata: {
         // Not including the metadata hash
@@ -86,5 +84,22 @@ const config: HardhatUserConfig = {
     target: "ethers-v6",
   },
 };
+
+import { subtask } from "hardhat/config";
+import { TASK_COMPILE_SOLIDITY_GET_SOLC_BUILD } from "hardhat/builtin-tasks/task-names";
+import path from "path";
+
+subtask(TASK_COMPILE_SOLIDITY_GET_SOLC_BUILD, async (args: { solcVersion: string }, hre, runSuper) => {
+  if (args.solcVersion === "0.8.24") {
+    const compilerPath = path.join(__dirname, "soljson-v0.8.24+commit.e11b9ed9.js");
+    return {
+      compilerPath,
+      isSolcJs: true, // важно для WASM-версии
+      version: args.solcVersion,
+      longVersion: "0.8.24+commit.e11b9ed9",
+    };
+  }
+  return runSuper();
+});
 
 export default config;

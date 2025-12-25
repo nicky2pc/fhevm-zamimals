@@ -24,8 +24,10 @@
     "hardhat"
   ],
   "dependencies": {
+    "@fhevm/solidity": "^0.9.1",
     "encrypted-types": "^0.0.4",
-    "@fhevm/solidity": "^0.9.1"
+    "fhevm": "^0.6.2",
+    "solc": "^0.8.24"
   },
   "devDependencies": {
     "@fhevm/hardhat-plugin": "^0.3.0-3",

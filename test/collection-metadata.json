@@ -1,0 +1,19 @@
+{
+    "name": "Confidential Trophy #1",
+    "description": "A confidential gaming achievement with encrypted score stored on-chain using FHEVM",
+    "image": "ipfs://bafybeif4pjtchxcmndfr2aqcalblp5go36e7ndb6kasjtrcpvojv55hlia",
+    "attributes": [
+      {
+        "trait_type": "Type",
+        "value": "Gaming Trophy"
+      },
+      {
+        "trait_type": "Rarity",
+        "value": "Legendary"
+      },
+      {
+        "trait_type": "Score",
+        "value": "Encrypted"
+      }
+    ]
+  }
